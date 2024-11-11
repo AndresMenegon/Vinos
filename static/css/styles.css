@@ -1,0 +1,118 @@
+/* Reset CSS básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #5c4b51;
+}
+
+.filtros {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.filtros form {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.filtros label {
+    font-weight: bold;
+}
+
+.filtros select,
+.filtros input {
+    padding: 8px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.filtros button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #5c4b51;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.filtros button:hover {
+    background-color: #8a7f7b;
+}
+
+/* Estilos para la lista de vinos */
+.vinos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.vino {
+    width: 300px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.vino:hover {
+    transform: scale(1.05);
+}
+
+/* Estilo de la imagen de los vinos */
+.vino-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.vino-img:hover {
+    transform: scale(1.1);
+}
+
+/* Estilo del contenedor de información de cada vino */
+.vino-info {
+    padding: 15px;
+}
+
+.vino-info h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #5c4b51;
+}
+
+.vino-info p {
+    margin: 5px 0;
+    font-size: 1rem;
+}
+
+footer {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 0.9rem;
+    color: #5c4b51;
+}

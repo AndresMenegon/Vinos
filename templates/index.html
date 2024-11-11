@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía de Vinos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+
+</head>
+<body>
+
+    <header>
+        <h1>Guía de Vinos</h1>
+    </header>
+
+    <main>
+        <div class="filtros">
+            <form method="get">
+                <label for="variedad">Variedad</label>
+                <select name="variedad" id="variedad">
+                    <option value="">Seleccionar variedad</option>
+                    {% for variedad in variedades %}
+                        <option value="{{ variedad[0] }}">{{ variedad[0] }}</option>
+                    {% endfor %}
+                </select>
+
+                <label for="maridaje">Maridaje</label>
+                <input type="text" name="maridaje" id="maridaje" placeholder="Buscar maridaje">
+
+                <label for="orden">Ordenar por</label>
+                <select name="orden" id="orden">
+                    <option value="">Seleccionar</option>
+                    <option value="precio_asc">Precio ascendente</option>
+                    <option value="precio_desc">Precio descendente</option>
+                    <option value="puntuacion_desc">Puntuación descendente</option>
+                </select>
+
+                <button type="submit">Filtrar</button>
+            </form>
+        </div>
+
+        <div class="vinos">
+            {% for vino in vinos %}
+                <div class="vino">
+                    <img src="{{ vino.imagen_url }}" alt="{{ vino.nombre }}" class="vino-img">
+                    <div class="vino-info">
+                        <h2>{{ vino.nombre }}</h2>
+                        <p>{{ vino.descripcion }}</p>
+                        <p><strong>Variedad:</strong> {{ vino.variedad }}</p>
+                        <p><strong>Año:</strong> {{ vino.año }}</p>
+                        <p><strong>Precio:</strong> ${{ vino.precio }}</p>
+                        <p><strong>Puntuación:</strong> {{ vino.puntuacion }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Wineapp</p>
+    </footer>
+
+</body>
+</html>
